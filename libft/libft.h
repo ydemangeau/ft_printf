@@ -84,7 +84,6 @@ char				*ft_strncpy(char *dest, const char *src, unsigned int n);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strstr(const char *str, const char *to_find);
 char				*ft_strnstr(const char *str, const char *to_find, size_t n);
-char				*ft_itoa(int n);
 int					ft_isblank(int c);
 int					ft_sqrt(int nb);
 int					ft_power(int nb, int power);
@@ -92,4 +91,9 @@ void				ft_swap(int *a, int *b);
 char				*ft_strrev(char *str);
 int					ft_get_next_line(const int fd, char **line);
 int					ft_abs(int i);
+char				*ft_itoa_base(int value, int base);
+char				*ft_itoa_base_unsigned(unsigned long long int value, int base);
+char				*ft_itoa(int n);
+char				*ft_itoa_float(long double nb, int base);
+
 #endif

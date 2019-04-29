@@ -1,12 +1,11 @@
 #include "../include/printf.h"
-#include "../include/struct.h"
 
 int		handle_int(va_list *args, t_handler *handler)
 {
 	intmax_t		arg;
 	char	*pref;
 
-	if (handler->precision >= 0)
+	if (handler->precision >= 0 || handler->flags.justify)
 		handler->flags.zero = 0;
 	else if (handler->flags.zero)
 		handler->precision = handler->field_width -1;

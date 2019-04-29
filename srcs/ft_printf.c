@@ -1,22 +1,29 @@
-
 #include "../include/printf.h"
 #include "../include/struct.h"
 
-int		handle_string(va_list *args, t_handler *handler)
-{
-	char	*arg;
-
-	arg = va_arg(*args, char *);
-	ft_putstr(arg);
-	return (ft_strlen(arg));
-}
-
 int		check_convert(const char **format, va_list *args, t_handler *handler, int *len)
 {
-	if (**format == 'd')
+	if (**format == 'd' || **format == 'i')
 		*len += handle_int(args, handler);
+	else if (**format == 'u')
+		*len += handle_uint(args, handler);
+	else if (**format == 'o')
+		*len += handle_octal(args, handler);
+	else if (**format == 'x' || **format == 'X')
+		*len += handle_hexa(format, args, handler);
 	else if (**format == 's')
 		*len += handle_string(args, handler);
+	else if (**format == 'c')
+		*len += handle_char(args, handler);
+	else if (**format == 'p')
+		*len += handle_ptr(args, handler);
+	else if (**format == 'f')
+		*len += handle_float(args, handler);
+	else if (**format == '%')
+	{
+		ft_putchar('%');
+		*len += 1;
+	}
 	(*format)++;
 	return (1);
 }
@@ -76,7 +83,7 @@ int		ft_printf(const char *format, ...)
 	va_start(args, format);
 	len = parser(format, &args, 0);
 	va_end(args);
-	//ft_putnbr(len);
+	//printf("len = %d\n",len);
 	return (len);
 }
 

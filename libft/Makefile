@@ -1,4 +1,4 @@
-NAME = libft.a
+NAME = libftprintf.a
 
 CC=gcc -c -Wall -Wextra -Werror
 
@@ -71,7 +71,21 @@ SRCS= ft_memset.c \
 	  ft_strrev.c \
 	  ft_swap.c \
 	  ft_get_next_line.c \
-	  ft_abs.c
+	  ft_itoa_base.c \
+	  ft_itoa_base_unsigned.c \
+	  ft_itoa_float.c \
+	  ft_abs.c\
+	  ft_printf/srcs/ft_printf.c \
+	  ft_printf/srcs/check.c \
+	  ft_printf/srcs/handle_char.c \
+	  ft_printf/srcs/handle_float.c \
+	  ft_printf/srcs/handle_hexa.c \
+	  ft_printf/srcs/handle_int.c \
+	  ft_printf/srcs/handle_octal.c \
+	  ft_printf/srcs/handle_ptr.c \
+	  ft_printf/srcs/handle_string.c \
+	  ft_printf/srcs/handle_uint.c \
+	  ft_printf/srcs/utils.c\
 
 OBJECTS= $(SRCS:.c=.o)
 

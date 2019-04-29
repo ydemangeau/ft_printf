@@ -1,7 +1,6 @@
 #include "../include/printf.h"
-#include "../include/struct.h"
 
-int		check_flags(const char **format, t_flag *flags)
+void		check_flags(const char **format, t_flag *flags)
 {
 	flags->sign = 0;
 	flags->justify = 0;
@@ -24,10 +23,9 @@ int		check_flags(const char **format, t_flag *flags)
 			flags->space = 1;
 		(*format)++;
 	}
-	return (1);
 }
 
-int		check_width(const char **format, va_list *args, t_handler *handler)
+void	check_width(const char **format, va_list *args, t_handler *handler)
 {
 	handler->field_width = 0;
 	while (ft_isdigit(**format) || **format == '*')
@@ -42,11 +40,9 @@ int		check_width(const char **format, va_list *args, t_handler *handler)
 		handler->field_width += (**format - '0');
 		(*format)++;
 	}
-	//printf("width = %d\n", handler->field_width);
-	return (1);
 }
 
-int		check_precision(const char **format, va_list *args, t_handler *handler)
+void			check_precision(const char **format, va_list *args, t_handler *handler)
 {
 	handler->precision = -1;
 	if (**format == '.')
@@ -66,8 +62,6 @@ int		check_precision(const char **format, va_list *args, t_handler *handler)
 			(*format)++;
 		}
 	}
-	//printf("precision = %d\n", handler->precision);
-	return (1);
 }
 
 int		check_lenght(const char **format, t_handler *handler)
@@ -94,9 +88,8 @@ int		check_lenght(const char **format, t_handler *handler)
 	else if (**format == 'L')
 		handler->lenght = L;
 	else
-		return (1);
+		return (-1);
 	(*format)++;
-	//printf("lenght = %d\n", handler->lenght);
 	return (1);
 }
 

@@ -1,7 +1,7 @@
-CC=gcc -c
+CC=clang 
 AR=ar rc
 FLAG= -Wall -Wextra -Werror
-LIB_DIR=./libft
+LIB_DIR=../
 LIB=../libft.a
 EXEC=ft_printf
 SRC=srcs/ft_printf.c\
