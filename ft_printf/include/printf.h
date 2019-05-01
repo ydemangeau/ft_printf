@@ -36,13 +36,14 @@ typedef struct	s_handler
 	t_flag		flags;
 }				t_handler;
 
+int		handle_percent(t_handler *handler);
 int		handle_float(va_list *args, t_handler *handler);
 int		handle_ptr(va_list *args, t_handler *handler);
 int		handle_char(va_list *args, t_handler *handler);
 int		handle_string(va_list *args, t_handler *handler);
 int			handle_hexa(const char **format, va_list *args, t_handler *handler);
 int			handle_octal(va_list *args, t_handler *handler);
-int		print_nbr(t_handler *handler, char *nbr);
+int		print_nbr(t_handler *handler, char *nbr, int i);
 char			*get_nbr(t_handler *handler, uintmax_t arg, char *pref, int base);
 
 int		handle_uint(va_list *args, t_handler *handler);

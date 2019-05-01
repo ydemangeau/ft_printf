@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ydemange <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/04/30 17:12:59 by ydemange          #+#    #+#             */
+/*   Updated: 2019/04/30 17:14:49 by ydemange         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/printf.h"
 
 void		check_flags(const char **format, t_flag *flags)
@@ -7,7 +19,6 @@ void		check_flags(const char **format, t_flag *flags)
 	flags->prefix = 0;
 	flags->zero = 0;
 	flags->space = 0;
-
 	while (**format == '-' || **format == '+' || **format == ' '
 				|| **format == '0' || **format == '#')
 	{
@@ -25,7 +36,7 @@ void		check_flags(const char **format, t_flag *flags)
 	}
 }
 
-void	check_width(const char **format, va_list *args, t_handler *handler)
+void		check_width(const char **format, va_list *args, t_handler *handler)
 {
 	handler->field_width = 0;
 	while (ft_isdigit(**format) || **format == '*')
@@ -42,7 +53,8 @@ void	check_width(const char **format, va_list *args, t_handler *handler)
 	}
 }
 
-void			check_precision(const char **format, va_list *args, t_handler *handler)
+void		check_precision(const char **format, va_list *args,
+		t_handler *handler)
 {
 	handler->precision = -1;
 	if (**format == '.')
@@ -64,7 +76,7 @@ void			check_precision(const char **format, va_list *args, t_handler *handler)
 	}
 }
 
-int		check_lenght(const char **format, t_handler *handler)
+int			check_lenght(const char **format, t_handler *handler)
 {
 	handler->lenght = none;
 	if (**format == 'h' && *(*format + 1) == 'h')
@@ -92,9 +104,3 @@ int		check_lenght(const char **format, t_handler *handler)
 	(*format)++;
 	return (1);
 }
-
-
-
-
-
-

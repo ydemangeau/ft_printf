@@ -92,7 +92,7 @@ int		main()
 	printf("%7.5x\n",452);
 	ft_printf("%7.5x\n",452);
 	//ft_printf("%x\n",7,4);
-	printf("%hx\n",-42);
+	//printf("%hx\n",-42);
 	ft_printf("%hx\n",-42);
 	
 	printf("str =%s\n","test");
@@ -178,9 +178,10 @@ int		main()
 	printf("%#x\n",0);
 	ft_printf("%#x\n",0);
 	//printf("%-05d\n",42);
-	ft_printf("%-05d\n",42);
+	//ft_printf("%-05d\n",42);
 	//printf("%#-08x\n",-42);
-	ft_printf("%#-08x\n",-42);
+	//ft_printf("%#-08x\n",-42);
+	printf("ok\n");
 	printf("%-5.10o\n",2500);
 	ft_printf("%-5.10o\n",2500);
 	printf("%-5.10d\n",2500);
@@ -188,8 +189,26 @@ int		main()
 	
 	printf("%5.10d\n",2500);
 	ft_printf("%5.10d\n",2500);
+	printf("%-10.5d\n",2500);
+	ft_printf("%-10.5d\n",2500);
+	printf("%-3.4d\n",2500);
+	ft_printf("%-3.4d\n",2500);
+	//printf("%#-08x\n",42);
+	ft_printf("%#-08x\n",42);
+	ft_printf("%\n",42);
+	ft_printf("% hP%\n");
+	ft_printf("% hZ%");
+	ft_printf("\n");
+	ft_printf("\n");
+	ft_printf("% Z ", "test");
+	ft_printf("\n");
+	ft_printf("% Z%");
+	ft_printf("\n");
+	int i;
+	printf("%5p",&i);
+	ft_printf("%5p",&i);
+	ft_printf("\n");
 	return (0);
 }
-
 
 
