@@ -18,11 +18,13 @@ int			handle_octal(va_list *args, t_handler *handler)
 	char		*pref;
 
 	arg = cast_unsigned_lenght(args, handler);
+	if (handler->flags.prefix && handler->precision == 0)
+			handler->precision +=1 ;
 	if (handler->precision >= 0)
 		handler->flags.zero = 0;
 	else if (handler->flags.zero)
 		handler->precision = handler->field_width - 1;
-	if (handler->flags.prefix)
+	if (handler->flags.prefix && arg != 0)
 		pref = "0";
 	else
 		pref = "";

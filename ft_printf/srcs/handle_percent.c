@@ -14,9 +14,12 @@
 
 int		handle_percent(t_handler *handler)
 {
-	if (handler->precision >= 0 || handler->flags.justify)
+	/*if (handler->precision >= 0 || handler->flags.justify)
 		handler->flags.zero = 0;
 	else if (handler->flags.zero)
 		handler->precision = handler->field_width - 1;
+	**/
+	handler->flags.justify = -1;
+	handler->field_width = -1;
 	return (print_nbr(handler, ft_strdup("%"), -1));
 }

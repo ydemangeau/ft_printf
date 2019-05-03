@@ -81,7 +81,7 @@ int			check_lenght(const char **format, t_handler *handler)
 	handler->lenght = none;
 	if (**format == 'h' && *(*format + 1) == 'h')
 	{
-		handler->lenght = hh;
+	handler->lenght = hh;
 		(*format)++;
 	}
 	else if (**format == 'l' && *(*format + 1) == 'l')

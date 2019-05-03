@@ -93,7 +93,6 @@ OBJECTS= $(SRCS:.c=.o)
 all : $(NAME)
 
 $(NAME) : $(OBJECTS)
-	#$(CC) $(SRCS)
 	$(AR) $(NAME) $(OBJECTS)
 
 clean :

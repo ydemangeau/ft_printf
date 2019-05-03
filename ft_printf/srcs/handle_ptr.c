@@ -19,10 +19,15 @@ int		handle_ptr(va_list *args, t_handler *handler)
 	char		*str;
 	int			i;
 
-	handler->precision = -1;
+	//handler->precision = -1;
 	i = -1;
-	pref = "0x";
 	arg = va_arg(*args, void *);
+	if (arg == NULL)
+	{
+		ft_putstr("(null)");
+		return (6);
+	}
+	pref = "0x";
 	str = get_nbr(handler, (uintmax_t)arg, pref, 16);
 	while (str[++i])
 	{
