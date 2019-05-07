@@ -6,7 +6,7 @@
 /*   By: ydemange <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 17:23:12 by ydemange          #+#    #+#             */
-/*   Updated: 2019/05/01 17:16:50 by ydemange         ###   ########.fr       */
+/*   Updated: 2019/05/07 13:07:29 by ydemange         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ int		handle_char(va_list *args, t_handler *handler)
 	while (len != handler->field_width &&
 			handler->field_width && !handler->flags.justify)
 	{
-		ft_putchar(' ');
+		if (handler->flags.zero)
+			ft_putchar('0');
+		else
+			ft_putchar(' ');
 		len++;
 	}
 	ft_putchar(arg);

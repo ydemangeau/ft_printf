@@ -6,7 +6,7 @@
 /*   By: ydemange <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 17:17:51 by ydemange          #+#    #+#             */
-/*   Updated: 2019/05/01 18:07:43 by ydemange         ###   ########.fr       */
+/*   Updated: 2019/05/07 13:17:31 by ydemange         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,28 +46,20 @@ int			handler(const char *format, va_list *args, int *len)
 
 	tmp = format;
 	if (*format == '\0')
-	{
-		*len = -1;
-		return (-1);
-	}
+		return (0);
 	check_flags(&format, &handler.flags);
 	check_width(&format, args, &handler);
 	check_precision(&format, args, &handler);
 	if (!(check_lenght(&format, &handler)))
 		return (-1);
-	if (check_convert(&format, args, &handler, len) == -1)
-		return (-1);
+	check_convert(&format, args, &handler, len);
 	return (format - tmp);
 }
 
-int			parser(const char *format, va_list *args)
+int			parser(const char *format, va_list *args, int len, int len_spec)
 {
 	char	*next_arg;
-	int		len;
-	int		len_spec;
 
-	len_spec = 0;
-	len = 0;
 	while (*format)
 	{
 		next_arg = ft_strchr(format, '%');
@@ -99,7 +91,7 @@ int			ft_printf(const char *format, ...)
 	int			len;
 
 	va_start(args, format);
-	len = parser(format, &args);
+	len = parser(format, &args, 0, 0);
 	va_end(args);
 	return (len);
 }

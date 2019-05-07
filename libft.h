@@ -6,7 +6,7 @@
 /*   By: ydemange <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/19 17:27:30 by ydemange          #+#    #+#             */
-/*   Updated: 2019/04/30 16:30:01 by ydemange         ###   ########.fr       */
+/*   Updated: 2019/05/07 10:48:35 by ydemange         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,8 @@ char				*ft_strrev(char *str);
 int					ft_get_next_line(const int fd, char **line);
 int					ft_abs(int i);
 char				*ft_itoa_base(int value, int base);
-char				*ft_itoa_base_unsigned(unsigned long long int value, int base);
+char				*ft_itoa_base_unsigned(unsigned long long int value,
+						int base);
 char				*ft_itoa(int n);
 char				*ft_itoa_float(long double nb, int base);
 int					ft_printf(const char *format, ...);

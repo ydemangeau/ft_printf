@@ -6,7 +6,7 @@
 /*   By: ydemange <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/01 17:36:47 by ydemange          #+#    #+#             */
-/*   Updated: 2019/05/01 18:04:18 by ydemange         ###   ########.fr       */
+/*   Updated: 2019/05/07 13:12:37 by ydemange         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,14 @@ int		handle_string(va_list *args, t_handler *handler)
 	int		len;
 	int		slen;
 
-	handler->flags.zero = 0;
 	arg = va_arg(*args, char*);
 	if (arg == NULL)
 	{
-		ft_putstr("(null)");
-		return (6);
+		if (handler->precision != 0)
+			str = ft_strdup("(null)");
+		else
+			str = ft_strdup("");
+		return (print_nbr(handler, str, -1));
 	}
 	slen = ft_strlen(arg);
 	if (handler->precision == 0)

@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa_float.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ydemange <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/07 10:41:50 by ydemange          #+#    #+#             */
+/*   Updated: 2019/05/07 10:42:10 by ydemange         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_restrcat(char **dst, char *src)
 {
@@ -18,20 +29,7 @@ char	*ft_restrcat(char **dst, char *src)
 	}
 	return (*dst);
 }
-/*
-static int		count(double temp, int integer)
-{
-	int i;
 
-	i = 1;
-	while (integer >= 10)
-	{
-		integer = integer /10;
-		i++;
-	}
-	return i;
-}
-*/
 char	*ft_itoa_float(long double nb, int base)
 {
 	int		integer;
@@ -56,12 +54,3 @@ char	*ft_itoa_float(long double nb, int base)
 	ft_strdel(&tmp);
 	return (new);
 }
-/*
-int main()
-{
-	printf("str = %s\n\n", ft_itoa_float(12.5300156, 10));
-	printf("str = %s\n", ft_itoa_float(12.26, 10));
-	return (0);
-}
-*/
-

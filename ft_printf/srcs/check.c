@@ -6,7 +6,7 @@
 /*   By: ydemange <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/30 17:12:59 by ydemange          #+#    #+#             */
-/*   Updated: 2019/04/30 17:14:49 by ydemange         ###   ########.fr       */
+/*   Updated: 2019/05/07 10:39:44 by ydemange         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int			check_lenght(const char **format, t_handler *handler)
 	handler->lenght = none;
 	if (**format == 'h' && *(*format + 1) == 'h')
 	{
-	handler->lenght = hh;
+		handler->lenght = hh;
 		(*format)++;
 	}
 	else if (**format == 'l' && *(*format + 1) == 'l')

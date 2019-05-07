@@ -6,7 +6,7 @@
 /*   By: lubenard <lubenard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/23 16:40:07 by lubenard          #+#    #+#             */
-/*   Updated: 2019/04/17 11:33:10 by lubenard         ###   ########.fr       */
+/*   Updated: 2019/05/07 13:10:04 by ydemange         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -456,7 +456,6 @@ int main(void)
 	printf("-----55-------\n");
 	printf("|%.x| |%.0x|\n", 0, 0);
 	ft_printf("|%.x| |%.0x|\n", 0, 0);
-	return (0);
 	printf("-----------------Test Kevin------------------------\n");
 	ft_printf("--------------------%%d-et-%%i--------------------\n");
 	printf("01) Vrai PRINTF : |%d|\n", 42);
@@ -599,11 +598,15 @@ int main(void)
 	printf("20) Vrai PRINTF : |%#10.5o|\n", 70);
 	ft_printf("20) Mon PRINTF  : |%#10.5o|\n", 70);
 	
+	printf("TEST |%#12.3o|\n", 0);					
+	ft_printf("TEST |%#12.3o|\n", 0);
+	
 	printf("21) Vrai PRINTF : |%o|\n", 0);
 	ft_printf("21) Mon PRINTF : |%o|\n", 0);
 	
 	printf("21) Vrai PRINTF : |%#o|\n", 0);
 	ft_printf("21) MON PRINTF : |%#o|\n", 0);
+	
 	printf("22) Vrai PRINTF : |%#.o|\n", 0);
 	ft_printf("22) Mon PRINTF  : |%#.o|\n", 0);
 	
@@ -624,6 +627,13 @@ int main(void)
 	ft_printf("23) Vrai PRINTF : |%#2.5o|\n", 123);
 	printf("23) Vrai PRINTF : |%#2.o|\n", 123);
 	ft_printf("23) Vrai PRINTF : |%#2.o|\n", 123);
+	printf("%#6o\n", 2500);	
+	ft_printf("%#6o\n", 2500);	
+	printf("%-#6o\n", 2500);	
+	ft_printf("%-#6o\n", 2500);	
+	printf("%06s\n", "hey");	
+	ft_printf("%06s\n", "hey");	
+	return (0);
 	ft_printf("--------------------%%x--------------------\n");
 	printf("01) Vrai PRINTF : |%x|\n", 34);
 	ft_printf("01) Mon PRINTF  : |%x|\n", 34);
@@ -774,15 +784,14 @@ int main(void)
 	printf("19) Vrai PRINTF : |%u|\n", UINT_MAX);
 	ft_printf("19) Mon PRINT   : |%u|\n", UINT_MAX);
 	printf("--------------Basic test 42 fc--------------------\n");  		   
-	printf("ok\n");
 	printf("");
 ft_printf("");
-	printf("\\n");
-	ft_printf("\\n");
+//	printf("\\n");
+//	ft_printf("\\n");
     printf("test\n");
 	ft_printf("test\n");
-    printf("test\\n");
-	ft_printf("test\\n");
+    //printf("test\\n");
+	//ft_printf("test\\n");
     printf("1234\n");
 	ft_printf("1234\n");
     printf("%%\n");
